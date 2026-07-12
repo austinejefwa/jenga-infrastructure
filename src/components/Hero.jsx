@@ -48,10 +48,39 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="mt-10 flex flex-wrap gap-4"
+        >
+          <a
+            href="#contact"
+            data-cursor-pointer
+            className="font-mono text-xs uppercase tracking-widest bg-amber text-ink px-6 py-4 hover:bg-concrete transition-colors"
+          >
+            Request a Quote
+          </a>
+          <a
+            href="#contact"
+            data-cursor-pointer
+            className="font-mono text-xs uppercase tracking-widest border border-steel text-concrete px-6 py-4 hover:border-amber hover:text-amber transition-colors"
+          >
+            Book a Consultation
+          </a>
+          <a
+            href="#projects"
+            data-cursor-pointer
+            className="font-mono text-xs uppercase tracking-widest text-concrete/60 px-6 py-4 hover:text-concrete transition-colors"
+          >
+            View Our Portfolio →
+          </a>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="mt-10 mb-16 lg:mb-0 flex items-center gap-2 font-mono text-xs text-concrete/50"
+          transition={{ delay: 1.1, duration: 0.6 }}
+          className="mt-8 mb-16 lg:mb-0 flex items-center gap-2 font-mono text-xs text-concrete/40"
         >
           <span className="inline-block w-8 h-px bg-amber" />
           Scroll to survey the work

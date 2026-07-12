@@ -1,20 +1,24 @@
 import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const PROJECTS = [
   {
+    slug: 'container-terminal',
     name: 'Second Container Terminal Expansion',
     type: 'Port Infrastructure',
     location: 'Kilindini Harbour, Mombasa',
     tone: 'from-sea/25',
   },
   {
+    slug: 'berth-works',
     name: 'Kilindini Harbour Berth Works',
     type: 'Marine & Civil Works',
     location: 'Mombasa Port',
     tone: 'from-amber/25',
   },
   {
+    slug: 'floating-bridge',
     name: 'Likoni Floating Bridge',
     type: 'Bridge Infrastructure',
     location: 'Likoni Channel, Mombasa',
@@ -44,40 +48,44 @@ function Column({ project, index, progress }) {
   const handleLeave = () => setTilt({ rx: 0, ry: 0 })
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      animate={{ rotateX: tilt.rx, rotateY: tilt.ry }}
-      transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-      style={{ transformPerspective: 1000 }}
-      data-cursor-pointer
-      className="group relative h-[70vh] w-[80vw] md:w-[420px] flex-shrink-0 overflow-hidden border border-steel/60 bg-harbor cursor-pointer"
-    >
-      <div className={`absolute inset-0 bg-gradient-to-br ${project.tone} to-ink blueprint-grid opacity-60`} />
-
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle 300px at ${pos.x}% ${pos.y}%, rgba(232,163,61,0.18), transparent 70%)`,
-        }}
-      />
-
+    <Link to={`/projects/${project.slug}`} data-cursor-pointer>
       <motion.div
-        style={{ y, opacity }}
-        className="absolute bottom-0 left-0 right-0 p-7 bg-gradient-to-t from-ink via-ink/85 to-transparent"
+        ref={ref}
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
+        animate={{ rotateX: tilt.rx, rotateY: tilt.ry }}
+        transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+        style={{ transformPerspective: 1000 }}
+        className="group relative h-[70vh] w-[80vw] md:w-[420px] flex-shrink-0 overflow-hidden border border-steel/60 bg-harbor cursor-pointer"
       >
-        <p className="font-mono text-[10px] tracking-widest uppercase text-amber mb-2">
-          {project.type}
-        </p>
-        <h3 className="font-display text-2xl text-concrete mb-2">{project.name}</h3>
-        <p className="font-mono text-xs text-concrete/50">{project.location}</p>
-      </motion.div>
+        <div className={`absolute inset-0 bg-gradient-to-br ${project.tone} to-ink blueprint-grid opacity-60`} />
 
-      <div className="absolute top-4 right-4 font-mono text-[10px] text-concrete/30">
-        {String(index + 1).padStart(2, '0')} / {String(PROJECTS.length).padStart(2, '0')}
-      </div>
-    </motion.div>
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          style={{
+            background: `radial-gradient(circle 300px at ${pos.x}% ${pos.y}%, rgba(232,163,61,0.18), transparent 70%)`,
+          }}
+        />
+
+        <motion.div
+          style={{ y, opacity }}
+          className="absolute bottom-0 left-0 right-0 p-7 bg-gradient-to-t from-ink via-ink/85 to-transparent"
+        >
+          <p className="font-mono text-[10px] tracking-widest uppercase text-amber mb-2">
+            {project.type}
+          </p>
+          <h3 className="font-display text-2xl text-concrete mb-2">{project.name}</h3>
+          <p className="font-mono text-xs text-concrete/50">{project.location}</p>
+          <p className="font-mono text-[10px] text-sea mt-3 uppercase tracking-wider">
+            View case study →
+          </p>
+        </motion.div>
+
+        <div className="absolute top-4 right-4 font-mono text-[10px] text-concrete/30">
+          {String(index + 1).padStart(2, '0')} / {String(PROJECTS.length).padStart(2, '0')}
+        </div>
+      </motion.div>
+    </Link>
   )
 }
 

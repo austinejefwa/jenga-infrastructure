@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import SurveyCursor from './components/SurveyCursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -7,11 +8,37 @@ import Structure3DSection from './components/Structure3DSection'
 import ExplodedStructure from './components/ExplodedStructure'
 import ImmersiveZoom from './components/ImmersiveZoom'
 import Capabilities3D from './components/Capabilities3D'
+import ProjectMap from './components/ProjectMap'
+import Testimonials from './components/Testimonials'
+import Accreditations from './components/Accreditations'
+import Insights from './components/Insights'
 import ParallaxStory from './components/ParallaxStory'
 import About from './components/About'
 import Footer from './components/Footer'
 import LoadingIntro from './components/LoadingIntro'
 import ScrollProgress from './components/ScrollProgress'
+import CaseStudyPage from './components/CaseStudyPage'
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <ProjectsSlider />
+      <LayerReveal />
+      <Structure3DSection />
+      <ExplodedStructure />
+      <ImmersiveZoom />
+      <Capabilities3D />
+      <ProjectMap />
+      <Testimonials />
+      <Accreditations />
+      <Insights />
+      <ParallaxStory />
+      <About />
+      <Footer />
+    </>
+  )
+}
 
 export default function App() {
   return (
@@ -20,16 +47,10 @@ export default function App() {
       <ScrollProgress />
       <SurveyCursor />
       <Nav />
-      <Hero />
-      <ProjectsSlider />
-      <LayerReveal />
-      <Structure3DSection />
-      <ExplodedStructure />
-      <ImmersiveZoom />
-      <Capabilities3D />
-      <ParallaxStory />
-      <About />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:slug" element={<CaseStudyPage />} />
+      </Routes>
     </div>
   )
 }
