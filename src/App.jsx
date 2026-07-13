@@ -3,6 +3,7 @@ import SurveyCursor from './components/SurveyCursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import ProjectsSlider from './components/ProjectsSlider'
+import ProgressDashboard from './components/ProgressDashboard'
 import LayerReveal from './components/LayerReveal'
 import Structure3DSection from './components/Structure3DSection'
 import ExplodedStructure from './components/ExplodedStructure'
@@ -18,12 +19,14 @@ import Footer from './components/Footer'
 import LoadingIntro from './components/LoadingIntro'
 import ScrollProgress from './components/ScrollProgress'
 import CaseStudyPage from './components/CaseStudyPage'
+import EngineeringAssistant from './components/EngineeringAssistant'
 
 function HomePage() {
   return (
     <>
       <Hero />
       <ProjectsSlider />
+      <ProgressDashboard />
       <LayerReveal />
       <Structure3DSection />
       <ExplodedStructure />
@@ -51,6 +54,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/:slug" element={<CaseStudyPage />} />
       </Routes>
+      <EngineeringAssistant />
     </div>
   )
 }
