@@ -1,21 +1,38 @@
 import { motion } from 'framer-motion'
 
+const VIDEO_SRC = '/videos/hero-drone.mp4'
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-end pb-24 overflow-hidden blueprint-grid">
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={VIDEO_SRC}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/55" />
+
+      {/* Radial Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0B0F14_75%)]" />
 
-      <div className="hidden lg:block absolute bottom-8 left-6 md:left-10 font-mono text-[11px] tracking-widest text-sea/70">
+      <div className="hidden lg:block absolute bottom-8 left-6 md:left-10 font-mono text-[11px] tracking-widest text-sea/70 z-10">
         SITE: KILINDINI HARBOUR<br />
         04.0435°S, 39.6682°E<br />
         MOMBASA, KENYA
       </div>
-      <div className="hidden lg:block absolute bottom-8 right-6 md:right-10 font-mono text-[11px] tracking-widest text-sea/70 text-right">
+
+      <div className="hidden lg:block absolute bottom-8 right-6 md:right-10 font-mono text-[11px] tracking-widest text-sea/70 text-right z-10">
         EST. 2026<br />
         JENGA INFRASTRUCTURE CO.
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 w-full pt-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full pt-32">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,6 +77,7 @@ export default function Hero() {
           >
             Request a Quote
           </a>
+
           <a
             href="#contact"
             data-cursor-pointer
@@ -67,6 +85,7 @@ export default function Hero() {
           >
             Book a Consultation
           </a>
+
           <a
             href="#projects"
             data-cursor-pointer
