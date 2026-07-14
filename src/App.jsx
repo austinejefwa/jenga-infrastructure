@@ -2,12 +2,14 @@ import { Routes, Route } from 'react-router-dom'
 import SurveyCursor from './components/SurveyCursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import StatsCounter from './components/StatsCounter'
 import ProjectsSlider from './components/ProjectsSlider'
 import ProgressDashboard from './components/ProgressDashboard'
 import PortTracker3D from './components/PortTracker3D'
 import LayerReveal from './components/LayerReveal'
 import Structure3DSection from './components/Structure3DSection'
 import BuildingZoomSection from './components/BuildingZoomSection'
+import ImmersiveReveal from './components/ImmersiveReveal'
 import ExplodedStructure from './components/ExplodedStructure'
 import ImmersiveZoom from './components/ImmersiveZoom'
 import Capabilities3D from './components/Capabilities3D'
@@ -30,12 +32,14 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <StatsCounter />
       <ProjectsSlider />
       <ProgressDashboard />
       <PortTracker3D />
       <LayerReveal />
       <Structure3DSection />
       <BuildingZoomSection />
+      <ImmersiveReveal />
       <ExplodedStructure />
       <ImmersiveZoom />
       <Capabilities3D />
