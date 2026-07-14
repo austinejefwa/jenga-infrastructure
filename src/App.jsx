@@ -7,6 +7,7 @@ import ProgressDashboard from './components/ProgressDashboard'
 import PortTracker3D from './components/PortTracker3D'
 import LayerReveal from './components/LayerReveal'
 import Structure3DSection from './components/Structure3DSection'
+import BuildingZoomSection from './components/BuildingZoomSection'
 import ExplodedStructure from './components/ExplodedStructure'
 import ImmersiveZoom from './components/ImmersiveZoom'
 import Capabilities3D from './components/Capabilities3D'
@@ -34,6 +35,7 @@ function HomePage() {
       <PortTracker3D />
       <LayerReveal />
       <Structure3DSection />
+      <BuildingZoomSection />
       <ExplodedStructure />
       <ImmersiveZoom />
       <Capabilities3D />
