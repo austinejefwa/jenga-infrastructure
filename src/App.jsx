@@ -4,12 +4,16 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import ProjectsSlider from './components/ProjectsSlider'
 import ProgressDashboard from './components/ProgressDashboard'
+import PortTracker3D from './components/PortTracker3D'
 import LayerReveal from './components/LayerReveal'
 import Structure3DSection from './components/Structure3DSection'
 import ExplodedStructure from './components/ExplodedStructure'
 import ImmersiveZoom from './components/ImmersiveZoom'
 import Capabilities3D from './components/Capabilities3D'
 import ProjectMap from './components/ProjectMap'
+import NCACalculator from './components/NCACalculator'
+import SupplierPortal from './components/SupplierPortal'
+import GridlockMap from './components/GridlockMap'
 import Testimonials from './components/Testimonials'
 import Accreditations from './components/Accreditations'
 import Insights from './components/Insights'
@@ -27,12 +31,16 @@ function HomePage() {
       <Hero />
       <ProjectsSlider />
       <ProgressDashboard />
+      <PortTracker3D />
       <LayerReveal />
       <Structure3DSection />
       <ExplodedStructure />
       <ImmersiveZoom />
       <Capabilities3D />
       <ProjectMap />
+      <NCACalculator />
+      <SupplierPortal />
+      <GridlockMap />
       <Testimonials />
       <Accreditations />
       <Insights />
